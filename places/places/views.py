@@ -1,9 +1,8 @@
 from .models import Place
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.urls import reverse
-from django.http import JsonResponse
 import json
 
 def PlaceList(request):

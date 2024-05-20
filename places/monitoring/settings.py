@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'places_db',
-        'USER': 'places_user',
-        'PASSWORD': 'isis2503',
-        'HOST': '10.128.0.7',
+        'NAME': os.environ.get('PLACES_DB_NAME', 'places_db'),
+        'USER': os.environ.get('PLACES_DB_USER', 'places_user'),
+        'PASSWORD': os.environ.get('PLACES_DB_PASSWORD', 'isis2503'),
+        'HOST': os.environ.get('PLACES_DB_HOST', 'localhost'),
         'PORT': '5432',
     }
 }
